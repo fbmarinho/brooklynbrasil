@@ -8,7 +8,7 @@ import {
 import AppStyles from '../../styles/AppStyles';
 import HSpace from '../../components/HSpace';
 
-import * as firebase from 'firebase';
+import fb from './Firebase';
 
 class SignInScreen extends React.Component {
     static navigationOptions = {
@@ -25,17 +25,7 @@ class SignInScreen extends React.Component {
     }
 
     componentDidMount() {
-        var firebaseConfig = {
-            apiKey: "AIzaSyAB41pGf_zuKMrB5LZdwvvdYtnMTPyCzZc",
-            authDomain: "brooklynbrasil2019.firebaseapp.com",
-            databaseURL: "https://brooklynbrasil2019.firebaseio.com",
-            projectId: "brooklynbrasil2019",
-            storageBucket: "",
-            messagingSenderId: "741110960280",
-            appId: "1:741110960280:web:134826940f629cba"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+
     }
 
 
@@ -67,7 +57,7 @@ class SignInScreen extends React.Component {
     _signInAsync = async () => {
         console.log('email:' + this.state.email + ' senha:' + this.state.password);
 
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        fb.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((res) => {
                 console.log(res);
                 AsyncStorage.setItem('userToken', res.user.uid);
