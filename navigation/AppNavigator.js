@@ -4,6 +4,7 @@ import Icon from "@expo/vector-icons/Ionicons";
 
 import AuthLoadingScreen from '../screens/auth/AuthLoadingScreen';
 import SignInScreen from '../screens/auth/SignInScreen';
+import SignUpScreen from '../screens/auth/SignUpScreen';
 import MenuLateral from '../screens/MenuLateral';
 import Avisos from '../screens/Avisos';
 import Horarios from '../screens/Horarios';
@@ -28,7 +29,6 @@ const TabNavigator = createBottomTabNavigator({
 );
 
 
-
 // Stack para conter as tabs
 const StackTabNavigator = createStackNavigator({ Tabs: TabNavigator }, {
   defaultNavigationOptions: ({ navigation }) => {
@@ -40,13 +40,11 @@ const StackTabNavigator = createStackNavigator({ Tabs: TabNavigator }, {
   }
 });
 
-
-
-
-
-
 // Telas de login
-const AuthStack = createStackNavigator({ SignIn: SignInScreen });
+const AuthStack = createStackNavigator({
+  SignIn: SignInScreen,
+  SignUp: SignUpScreen
+});
 
 // Adiciona um menu lateral
 const AppDrawerNavigator = createDrawerNavigator({

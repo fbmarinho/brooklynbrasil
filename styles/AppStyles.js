@@ -1,6 +1,5 @@
 import Theme from './theme';
 import { StyleSheet, Dimensions } from 'react-native';
-import theme from './theme';
 
 var { height, width } = Dimensions.get('window');
 
@@ -30,6 +29,12 @@ export default StyleSheet.create({
         padding: 10,
         textAlign: 'center'
     },
+    commonText: {
+        color: Theme.secondaryText,
+        fontSize: 14,
+        padding: 10,
+        textAlign: 'center'
+    },
     drawerButton: {
         color: Theme.primaryText,
         padding: 10,
@@ -45,6 +50,40 @@ export default StyleSheet.create({
         backgroundColor: Theme.lighterSecondaryColor,
         padding: 10,
         height: 60
-    }
+    },
+    input: {
+        borderWidth: 2,
+        borderRadius: 20,
+        padding: 10,
+        borderColor: Theme.secondaryText,
+        width: 0.8 * width,
+        height: 40,
+        textAlign: 'center',
+        color: Theme.primaryText,
+        margin: 5
+    },
+    btnPrimary: {
+        borderRadius: 20,
+        padding: 10,
+        borderColor: Theme.secondaryText,
+        width: 0.8 * width,
+        height: 40,
+        textAlign: 'center',
+        backgroundColor: Theme.primaryText,
+        margin: 5
+    },
+    btnSecondary: {
+
+        borderRadius: 20,
+        padding: 10,
+        borderColor: Theme.secondaryText,
+        backgroundColor: Theme.lighterSecondaryColor,
+        color: Theme.detailColor,
+        width: 0.8 * width,
+        height: 40,
+        textAlign: 'center',
+        margin: 5
+    },
+
 
 });
