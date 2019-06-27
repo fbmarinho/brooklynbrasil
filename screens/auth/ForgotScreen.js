@@ -15,34 +15,17 @@ class SignUpScreen extends React.Component {
   render() {
     return (
       <View style={AppStyles.container}>
-        <Text style={AppStyles.title}>Cadastro</Text>
-        <TextInput
-          style={AppStyles.input}
-          placeholder="Nome"
-          autoCompleteType="name"
-        />
-        <TextInput
-          style={AppStyles.input}
-          placeholder="Sobrenome"
-          autoCompleteType="name"
-        />
-        <HSpace size={20} />
+        <Text style={AppStyles.title}>Esqueceu a senha ?</Text>
         <TextInput
           style={AppStyles.input}
           placeholder="Seu E-mail"
           autoCompleteType="email"
         />
-        <TextInput
-          style={AppStyles.input}
-          placeholder="Senha"
-          autoCompleteType="password"
-          secureTextEntry={true}
-        />
         <Text style={AppStyles.btnPrimary} onPress={this._signUpAsync}>
-          Cadastrar
+          Resgatar senha
         </Text>
         <HSpace size={60} />
-        <Text style={AppStyles.commonText}>Já tem conta ?</Text>
+        <Text style={AppStyles.commonText}>Lembrou ?</Text>
         <Text
           style={AppStyles.btnSecondary}
           onPress={() => this.props.navigation.goBack()}
